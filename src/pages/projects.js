@@ -1,8 +1,42 @@
 import React from "react"
+import styled from "styled-components"
 import Layout from "../components/Layout"
+import { PageHeader, PageSubHeader } from "../components/Headers"
+
+import queryGeneratorImg from "../images/query-generator.jpg"
+import ProjectInfo from "../components/ProjectInfo"
+
+const ProjectsContainer = styled.div`
+  text-align: center;
+  margin: 3rem auto;
+  font-size: 1.6rem;
+  width: 70%;
+`
 
 const projects = () => {
-  return <Layout>projects</Layout>
+  const projectsList = [
+    {
+      img: queryGeneratorImg,
+      name: "Query Letter Generator",
+      description:
+        'Query Letter Generator was a passion project made by myself and my girlfriend, Julia Jorgenson. Julia is a writer, and had always imagined a simple way to construct what is called a "Query Letter", a letter that is sent to literary agents as a sort of elevator pitch about yourself and your latest work.',
+      link: "https://www.querylettergenerator.com",
+    },
+  ]
+
+  return (
+    <Layout>
+      <PageHeader>Projects</PageHeader>
+      <PageSubHeader>
+        Here are some of the things I have been working on!
+      </PageSubHeader>
+      <ProjectsContainer>
+        {projectsList.map((project, key) => (
+          <ProjectInfo key={key} {...project} />
+        ))}
+      </ProjectsContainer>
+    </Layout>
+  )
 }
 
 export default projects
