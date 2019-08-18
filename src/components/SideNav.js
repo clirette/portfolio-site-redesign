@@ -2,19 +2,33 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+const activeClass = {
+  backgroundColor: "#ff0000",
+  color: "#fff",
+}
+
 const SideNav = styled.nav`
   flex: 1;
   background-color: #404040;
+`
+const NavLinksContainer = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  margin-top: 20rem;
 `
 
 const NavLink = styled(Link)`
+  padding: 1rem 0 1rem 2rem;
   text-decoration: none;
   font-size: 2.5rem;
-  margin: 2rem auto 2rem 3rem;
+  background-color: #fc5353;
   color: #dfdfdf;
+  transition: all 0.3s;
+  display: "block";
+  &:hover {
+    background-color: #ff0000;
+    color: #fff;
+  }
 `
 
 const links = [
@@ -38,10 +52,12 @@ const links = [
 
 export default () => (
   <SideNav>
-    {links.map(({ name, to }, key) => (
-      <NavLink key={key} to={to}>
-        {name}
-      </NavLink>
-    ))}
+    <NavLinksContainer>
+      {links.map(({ name, to }, key) => (
+        <NavLink key={key} to={to} activeStyle={activeClass}>
+          {name}
+        </NavLink>
+      ))}
+    </NavLinksContainer>
   </SideNav>
 )

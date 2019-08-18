@@ -5,14 +5,14 @@ import "../styles.css"
 import SideNav from "./SideNav"
 
 const BodyContainer = styled.div`
-  overflow: hidden;
   min-width: 95vw;
   min-height: 95vh;
   margin: 2rem;
   background-color: #faf9f9;
   border-radius: 0.5rem;
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
   display: flex;
+  overflow: hidden;
 `
 
 const ContentContainer = styled.div`
