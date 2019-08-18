@@ -1,0 +1,45 @@
+/* GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:300,400,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  background: rgba(183,222,237,1);
+  background: -moz-linear-gradient(-45deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(245,233,245,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(183,222,237,1)), color-stop(0%, rgba(113,206,239,1)), color-stop(100%, rgba(245,233,245,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(245,233,245,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(245,233,245,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(245,233,245,1) 100%);
+  background: linear-gradient(135deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(245,233,245,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#f5e9f5', GradientType=1 );
+}
+
+.portrait-container {
+  display: flex;
+  justify-content: center;
+}
+.portrait {
+  background: url('./images/self.jpg') no-repeat center center / cover;
+  height: 20rem;
+  width: 20rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 50%;
+}
