@@ -9,12 +9,8 @@ export default () => (
     <header className="portrait-container">
       <div className="portrait" />
     </header>
-    <PageHeader fontWeight="500" align="center">
-      Chase Lirette
-    </PageHeader>
-    <PageSubHeader fontWeight="300" align="center" letterSpacing=".2rem">
-      Full Stack Developer
-    </PageSubHeader>
+    <PageHeader isHome>Chase Lirette</PageHeader>
+    <PageSubHeader isHome>Full Stack Developer</PageSubHeader>
     <HomeContent>
       <h1>Hello There!</h1>
       <p>

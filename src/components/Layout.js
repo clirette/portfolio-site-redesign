@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import "../styles.css"
+import "../css/styles.css"
 
 import SideNav from "./SideNav"
 
