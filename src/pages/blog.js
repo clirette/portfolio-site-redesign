@@ -6,7 +6,6 @@ import Layout from "../components/Layout"
 import { PageHeader, PageSubHeader } from "../components/Headers"
 
 const PostsContainer = styled.div`
-  /* padding-left: 10rem; */
   margin: 0 auto;
   width: 70%;
 `

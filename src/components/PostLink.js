@@ -10,6 +10,7 @@ const LinkContainer = styled.div`
   border: 0.1rem solid #000;
   border-radius: 0.3rem;
   background-color: #f5f5f5;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
   &:hover {
     color: #000;

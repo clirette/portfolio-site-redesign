@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import "../css/styles.css"
-
+import devices from "../utils/devices"
 import SideNav from "./SideNav"
 
 const BodyContainer = styled.div`
@@ -13,6 +13,10 @@ const BodyContainer = styled.div`
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
   display: flex;
   overflow: hidden;
+
+  @media ${devices.mobileM} {
+    margin: 0;
+  }
 `
 
 const ContentContainer = styled.div`
