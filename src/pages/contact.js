@@ -13,6 +13,7 @@ const contact = () => {
       </PageSubHeader>
       <div className={styles.center}>
         <form name="contact" action="/" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div className={styles.formItem}>
             <label htmlFor="name" className={styles.labels}>
               Name
