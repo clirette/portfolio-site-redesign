@@ -12,7 +12,9 @@ const activeClass = {
 const SideNavDesktop = styled.nav`
   flex: 1;
   background-color: #404040;
+  box-shadow: 0.2rem 0 2rem rgba(0, 0, 0, 0.9);
   @media ${devices.mobileM} {
+    box-shadow: none;
     height: 100vh;
     display: none;
     width: 100vw;
