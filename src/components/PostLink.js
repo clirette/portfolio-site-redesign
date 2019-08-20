@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import devices from "../utils/devices"
 
 const LinkContainer = styled.div`
   width: 100%;
@@ -15,6 +16,14 @@ const LinkContainer = styled.div`
   &:hover {
     color: #000;
     background-color: #fff;
+  }
+
+  @media ${devices.mobileM} {
+    padding: 0.8rem;
+    margin: 2rem auto;
+    width: 80%;
+    display: block;
+    font-size: 2rem;
   }
 `
 

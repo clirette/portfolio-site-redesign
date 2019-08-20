@@ -42,9 +42,17 @@ body {
   margin: 3rem auto;
   text-align: center;
   border-radius: 50%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 a {
   outline: 0;
+}
+
+@media (max-width: 375px) {
+  .portrait {
+    height: 15rem;
+    width: 15rem;
+  }
 }
 

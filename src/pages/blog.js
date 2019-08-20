@@ -4,10 +4,14 @@ import styled from "styled-components"
 import PostLink from "../components/PostLink"
 import Layout from "../components/Layout"
 import { PageHeader, PageSubHeader } from "../components/Headers"
+import devices from "../utils/devices"
 
 const PostsContainer = styled.div`
   margin: 0 auto;
   width: 70%;
+  @media ${devices.mobileM} {
+    width: 90%;
+  }
 `
 
 const blog = ({

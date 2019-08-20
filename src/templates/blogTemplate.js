@@ -10,7 +10,7 @@ const BackLink = styled(Link)`
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   padding: 1rem;
-  margin: 2rem 0 0 2rem;
+  margin: 1rem 0 0 5rem;
   display: inline-block;
   background-color: #fff;
   color: #333;

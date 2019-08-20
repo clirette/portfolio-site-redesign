@@ -2,19 +2,39 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+import devices from "../utils/devices"
+
 const activeClass = {
   backgroundColor: "#ff0000",
   color: "#fff",
 }
 
+const SideNavDesktop = styled.nav`
+  flex: 1;
+  background-color: #404040;
+  @media ${devices.mobileM} {
+    height: 100vh;
+    display: none;
+    width: 100vw;
+  }
+`
+
 const SideNav = styled.nav`
   flex: 1;
   background-color: #404040;
+  @media ${devices.mobileM} {
+    height: 100vh;
+    width: 100vw;
+    flex: 9000;
+  }
 `
 const NavLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20rem;
+  margin-top: 30rem;
+  @media ${devices.mobileM} {
+    margin-top: 10rem;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -50,14 +70,32 @@ const links = [
   },
 ]
 
-export default () => (
-  <SideNav>
-    <NavLinksContainer>
-      {links.map(({ name, to }, key) => (
-        <NavLink key={key} to={to} activeStyle={activeClass}>
-          {name}
-        </NavLink>
-      ))}
-    </NavLinksContainer>
-  </SideNav>
-)
+export const SideNavMain = () => {
+  return (
+    <SideNavDesktop>
+      <NavLinksContainer>
+        {links.map(({ name, to }, key) => (
+          <NavLink key={key} to={to} activeStyle={activeClass}>
+            {name}
+          </NavLink>
+        ))}
+      </NavLinksContainer>
+    </SideNavDesktop>
+  )
+}
+
+export const SideNavMobile = ({ display }) => {
+  return (
+    display && (
+      <SideNav>
+        <NavLinksContainer>
+          {links.map(({ name, to }, key) => (
+            <NavLink key={key} to={to} activeStyle={activeClass}>
+              {name}
+            </NavLink>
+          ))}
+        </NavLinksContainer>
+      </SideNav>
+    )
+  )
+}
