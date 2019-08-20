@@ -12,7 +12,7 @@ const contact = () => {
         Reach out to me if you have any questions, or just want to chat!
       </PageSubHeader>
       <div className={styles.center}>
-        <form name="contact" action="/" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <div className={styles.formItem}>
             <label htmlFor="name" className={styles.labels}>
