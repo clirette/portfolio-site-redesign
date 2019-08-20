@@ -24,7 +24,12 @@ const contact = () => {
             <label htmlFor="email" className={styles.labels}>
               Email
             </label>
-            <input type="text" name="name" className={styles.inputs} required />
+            <input
+              type="email"
+              name="email"
+              className={styles.inputs}
+              required
+            />
           </div>
           <div className={styles.formItem}>
             <label htmlFor="message" className={styles.labels}>
