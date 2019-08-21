@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
+import socialLinks from "../constants/social-links"
 import devices from "../utils/devices"
 
 const activeClass = {
@@ -12,6 +12,7 @@ const activeClass = {
 const SideNavDesktop = styled.nav`
   flex: 1;
   background-color: #404040;
+  position: relative;
   box-shadow: 0.2rem 0 2rem rgba(0, 0, 0, 0.9);
   @media ${devices.mobileM} {
     box-shadow: none;
@@ -53,6 +54,23 @@ const NavLink = styled(Link)`
   }
 `
 
+const SocialLinksContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 90%;
+  a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+  }
+`
+
+const SocailLinksFlexContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+`
+
 const links = [
   {
     name: "Home",
@@ -72,16 +90,37 @@ const links = [
   },
 ]
 
+const renderNavLinks = () => {
+  return links.map(({ name, to }, key) => (
+    <NavLink key={key} to={to} activeStyle={activeClass}>
+      {name}
+    </NavLink>
+  ))
+}
+
+const renderSocialLinks = () => {
+  return socialLinks.map(({ icon, href }, key) => (
+    <a
+      href={href}
+      key={key}
+      className="social-link"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      {icon}
+    </a>
+  ))
+}
+
 export const SideNavMain = () => {
   return (
     <SideNavDesktop>
-      <NavLinksContainer>
-        {links.map(({ name, to }, key) => (
-          <NavLink key={key} to={to} activeStyle={activeClass}>
-            {name}
-          </NavLink>
-        ))}
-      </NavLinksContainer>
+      <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
+      <SocialLinksContainer>
+        <SocailLinksFlexContainer>
+          {renderSocialLinks()}
+        </SocailLinksFlexContainer>
+      </SocialLinksContainer>
     </SideNavDesktop>
   )
 }
@@ -90,13 +129,12 @@ export const SideNavMobile = ({ display }) => {
   return (
     display && (
       <SideNav>
-        <NavLinksContainer>
-          {links.map(({ name, to }, key) => (
-            <NavLink key={key} to={to} activeStyle={activeClass}>
-              {name}
-            </NavLink>
-          ))}
-        </NavLinksContainer>
+        <NavLinksContainer>{renderNavLinks()}</NavLinksContainer>
+        <SocialLinksContainer>
+          <SocailLinksFlexContainer>
+            {renderSocialLinks()}
+          </SocailLinksFlexContainer>
+        </SocialLinksContainer>
       </SideNav>
     )
   )
