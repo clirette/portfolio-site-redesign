@@ -13,7 +13,7 @@ const SideNavDesktop = styled.nav`
   flex: 1;
   background-color: #404040;
   position: relative;
-  box-shadow: 0.2rem 0 2rem rgba(0, 0, 0, 0.9);
+  box-shadow: 0.2rem 0 1rem rgba(0, 0, 0, 0.6);
   @media ${devices.mobileM} {
     box-shadow: none;
     height: 100vh;
