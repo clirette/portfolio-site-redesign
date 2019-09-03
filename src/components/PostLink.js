@@ -35,12 +35,22 @@ const StyledLink = styled(Link)`
   font-weight: 700;
 `
 
-const PostLink = ({ post }) => (
-  <StyledLink to={post.frontmatter.path}>
-    <LinkContainer>
-      {post.frontmatter.title} ({post.frontmatter.date})
-    </LinkContainer>
-  </StyledLink>
-)
+const PostLink = ({ post, id }) => {
+  console.log(id)
+  return (
+    <StyledLink to={post.frontmatter.path}>
+      <LinkContainer
+        data-aos={id % 2 == 0 ? "fade-left" : "fade-right"}
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-back"
+        data-aos-delay="400"
+        data-aos-offset="0"
+        data-aos-anchor="posts-container"
+      >
+        {post.frontmatter.title} ({post.frontmatter.date})
+      </LinkContainer>
+    </StyledLink>
+  )
+}
 
 export default PostLink

@@ -34,9 +34,17 @@ const ProjectImg = styled.img`
   }
 `
 
-const ProjectInfo = ({ img, name, description, link }) => {
+const ProjectInfo = ({ img, name, description, link, id }) => {
+  console.log(id)
   return (
-    <Project>
+    <Project
+      data-aos={id % 2 == 0 ? "fade-left" : "fade-right"}
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-back"
+      data-aos-delay="400"
+      data-aos-offset="0"
+      data-aos-anchor=".projects-container"
+    >
       <h1>{name}</h1>
       <a href={link} target="_blank" rel="noopener noreferrer">
         {link}

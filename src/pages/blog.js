@@ -19,16 +19,19 @@ const blog = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+  let postId = 0
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostLink key={edge.node.id} id={postId++} post={edge.node} />)
   return (
     <Layout>
-      <PageHeader>Blogs</PageHeader>
-      <PageSubHeader>
-        I like to write about programming, music, my life... Anything really!
-      </PageSubHeader>
-      <PostsContainer>{Posts}</PostsContainer>
+      <div data-aos="fade-up">
+        <PageHeader>Blogs</PageHeader>
+        <PageSubHeader>
+          I like to write about programming, music, my life... Anything really!
+        </PageSubHeader>
+        <PostsContainer className="posts-container">{Posts}</PostsContainer>
+      </div>
     </Layout>
   )
 }

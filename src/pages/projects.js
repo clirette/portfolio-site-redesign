@@ -39,13 +39,15 @@ const projects = () => {
 
   return (
     <Layout>
-      <PageHeader>Projects</PageHeader>
-      <PageSubHeader>
-        Here are some of the things I have been working on!
-      </PageSubHeader>
-      <ProjectsContainer>
+      <div data-aos="fade-up">
+        <PageHeader>Projects</PageHeader>
+        <PageSubHeader>
+          Here are some of the things I have been working on!
+        </PageSubHeader>
+      </div>
+      <ProjectsContainer className="projects-container">
         {projectsList.map((project, key) => (
-          <ProjectInfo key={key} {...project} />
+          <ProjectInfo key={key} id={key} {...project} />
         ))}
       </ProjectsContainer>
     </Layout>

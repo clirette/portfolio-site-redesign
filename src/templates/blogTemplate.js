@@ -15,7 +15,7 @@ const BackLink = styled(Link)`
   background-color: #fff;
   color: #333;
   border: 0.2rem solid #333;
-  transition: all 0.3s;
+  transition: all 0.3s !important;
   &:hover {
     background-color: #333;
     color: #fff;
@@ -38,8 +38,10 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <BackLink to="/blog">Back</BackLink>
-      <div className="blog-post-container">
+      <BackLink to="/blog" data-aos="fade-in">
+        Back
+      </BackLink>
+      <div className="blog-post-container" data-aos="fade-up">
         <div className="blog-post">
           <PageHeader>{frontmatter.title}</PageHeader>
           <PageSubHeader>{frontmatter.date}</PageSubHeader>
