@@ -39,8 +39,11 @@ const SideNavToggle = styled.div`
 
 const ContentContainer = styled.div`
   flex: 6;
+  height: 95vh;
+  overflow-y: auto;
   @media ${devices.mobileM} {
     overflow: scroll;
+    height: 100vh;
   }
 `
 
